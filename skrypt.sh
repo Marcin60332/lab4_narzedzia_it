@@ -22,4 +22,11 @@ elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
 	echo "Tworzy automatycznie podaną ilość plików log: '--logs N' lub '-l N'"
 	echo "Wyświetla dostępne opcje skryptu: '--help' lub '-h'"
 
+elif [ "$1" == "--init" ]; then
+    echo "Klonowanie repozytorium..."
+    git clone https://github.com/Marcin60332/lab4_narzedzia_it.git
+    
+    echo "Ustawianie ścieżki w zmiennej PATH..."
+    export PATH="$PATH:$(pwd)"
+    echo "Bieżący katalog $(pwd) został dodany do PATH."
 fi
