@@ -20,7 +20,8 @@ elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
 	echo "Wyświetlanie dzisiejszej daty: '--date' lub '-d'"
 	echo "Tworzy automatycznie 100 plików log: '--logs' lub '-l'"
 	echo "Tworzy automatycznie podaną ilość plików log: '--logs N' lub '-l N'"
-	echo "Wyświetla dostępne opcje skryptu: '--help' lub '-h'"
+	echo "Wyświetlanie dostępnych opcji skryptu: '--help' lub '-h'"
+	echo "Wyświetlanie danuch autora: '--author' lub '-a'"
 
 elif [ "$1" == "--init" ]; then
     echo "Klonowanie repozytorium..."
@@ -37,16 +38,18 @@ elif [ "$1" == "--error" ] || [ "$1" == "-e" ]; then
     fi
 
     for ((i=1; i<=count; i++)); do
-        # Tworzenie unikalnego katalogu errorX
         dir_name="error${i}"
         mkdir -p "$dir_name"
         
-        # Ścieżka do pliku errorX.txt wewnątrz katalogu errorX
         filename="${dir_name}/error${i}.txt"
         
         echo "Nazwa pliku: error${i}.txt" > "$filename"
         echo "Skrypt: $0" >> "$filename"
         echo "Data: $(date)" >> "$filename"
     done
-    echo "Utworzono $count plików error w odpowiednich katalogach."
+    echo "Utworzono $count plików error w odpowiednich katalogach"
+elif [ "$1" == "--author" ] || [ "$1"  == "-a" ]; then
+	echo "Autor skryptu: Marcin Kozanecki"
+	echo "Nr indeksu: 60332"
+
 fi
