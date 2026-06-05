@@ -29,4 +29,24 @@ elif [ "$1" == "--init" ]; then
     echo "Ustawianie ścieżki w zmiennej PATH..."
     export PATH="$PATH:$(pwd)"
     echo "Bieżący katalog $(pwd) został dodany do PATH."
+
+elif [ "$1" == "--error" ] || [ "$1" == "-e" ]; then
+    count=100
+    if [ -n "$2" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
+        count=$2
+    fi
+
+    for ((i=1; i<=count; i++)); do
+        # Tworzenie unikalnego katalogu errorX
+        dir_name="error${i}"
+        mkdir -p "$dir_name"
+        
+        # Ścieżka do pliku errorX.txt wewnątrz katalogu errorX
+        filename="${dir_name}/error${i}.txt"
+        
+        echo "Nazwa pliku: error${i}.txt" > "$filename"
+        echo "Skrypt: $0" >> "$filename"
+        echo "Data: $(date)" >> "$filename"
+    done
+    echo "Utworzono $count plików error w odpowiednich katalogach."
 fi
