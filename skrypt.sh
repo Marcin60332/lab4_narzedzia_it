@@ -20,6 +20,10 @@ elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
 	echo "Wyświetlanie dzisiejszej daty: '--date' lub '-d'"
 	echo "Tworzy automatycznie 100 plików log: '--logs' lub '-l'"
 	echo "Tworzy automatycznie podaną ilość plików log: '--logs N' lub '-l N'"
-	echo "Wyświetla dostępne opcje skryptu: '--help' lub '-h'"
+	echo "Wyświetlanie dostępnych opcji skryptu: '--help' lub '-h'"
+	echo "Wyświetlanie danuch autora: '--author' lub '-a'"
 
+elif [ "$1" == "--author" ] || [ "$1"  == "-a" ]; then
+	echo "Autor skryptu: Marcin Kozanecki"
+	echo "Nr indeksu: 60332"
 fi
