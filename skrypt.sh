@@ -22,6 +22,9 @@ elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
 	echo "Tworzy automatycznie podaną ilość plików log: '--logs N' lub '-l N'"
 	echo "Wyświetlanie dostępnych opcji skryptu: '--help' lub '-h'"
 	echo "Wyświetlanie danuch autora: '--author' lub '-a'"
+	echo "Inicjalizacja repozytorium i PATH: '--init'"
+	echo "Tworzy automatycznie pliki błędów: '--error' lub '-e'"
+	echo "Tworzy automatycznie podaną ilość błędów: '--error N' lub '-e N'"
 
 elif [ "$1" == "--author" ] || [ "$1"  == "-a" ]; then
 	echo "Autor skryptu: Marcin Kozanecki"
